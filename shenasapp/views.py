@@ -6,7 +6,7 @@ from shenasapp import serializers
 
 class ImageCreateAPIView(viewsets.ModelViewSet):
     serializer_class = serializers.imageSerializer
-    queryset = models.MyImage.objects.all()
+    queryset = models.PersonallyImage.objects.all()
 
 
 # Create your views here.

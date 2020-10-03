@@ -5,12 +5,14 @@ from rest_framework.serializers import (
     ModelSerializer,
 )
 
+
 class imageSerializer(ModelSerializer):
     class Meta:
-        model = models.MyImage
+        model = models.PersonallyImage
         fields = [
             'model_pic'
         ]
+
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
