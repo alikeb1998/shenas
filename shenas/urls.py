@@ -19,13 +19,16 @@ from django.urls import path, include
 from django.contrib import admin
 from rest_framework import routers
 from shenasapp import views
+from django.conf.urls.static import static
+from django.conf import settings
 
 router = routers.DefaultRouter()
 
 router.register(r'api/users', views.UserViewSet)
+router.register(r'api/upload',views.ImageCreateAPIView)
 admin.autodiscover()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^', include(router.urls)),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

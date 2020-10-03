@@ -4,6 +4,11 @@ from . import models
 from shenasapp import serializers
 
 
+class ImageCreateAPIView(viewsets.ModelViewSet):
+    serializer_class = serializers.imageSerializer
+    queryset = models.MyImage.objects.all()
+
+
 # Create your views here.
 class UserViewSet(viewsets.ModelViewSet):
     # this fetches all the rows of data in the Fish table
