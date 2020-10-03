@@ -24,7 +24,7 @@ SECRET_KEY = 's-gabw%svk!t!r6_qxb4(igdw*i+3*3b#qcb!uu%lw+=-9rlxx'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['shenas.herokuapp.com']
 
 # Application definition
 
