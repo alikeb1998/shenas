@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'shenasapp.apps.ShenasappConfig',
     "rest_framework",
+    "djoser",
+    "rest_framework.authtoken",
+    'rest_framework_simplejwt',
+
 ]
 
 MIDDLEWARE = [
@@ -118,3 +122,9 @@ STATIC_URL = '/static/'
 django_heroku.settings(locals())
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
