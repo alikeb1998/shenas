@@ -3,3 +3,4 @@ gunicorn
 django-heroku
 requests~=2.24.0
 djangorestframework~=3.11.1
+djoser
