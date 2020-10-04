@@ -25,12 +25,21 @@ class userProfileDetailView(RetrieveUpdateDestroyAPIView):
     permission_classes = [IsOwnerProfileOrReadOnly, IsAuthenticated]
 
 
-class ImageCreateAPIView(viewsets.ModelViewSet):
-    serializer_class = serializers.imageSerializer
+class personalImageView(viewsets.ModelViewSet):
+    serializer_class = serializers.prsonalImageSerializer
     queryset = models.PersonallyImage.objects.all()
 
 
-# Create your views here.
+class nationalCardImageView(viewsets.ModelViewSet):
+    serializer_class = serializers.nationalCarImageSerializer
+    queryset = models.NationalCardImage.objects.all()
+
+
+class shenasnameImageView(viewsets.ModelViewSet):
+    serializer_class = serializers.shenasnameCardImageSrializer
+    queryset = models.ShenasnameImage.objects.all()
+
+
 class UserViewSet(viewsets.ModelViewSet):
     # this fetches all the rows of data in the Fish table
     queryset = models.User.objects.all()

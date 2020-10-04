@@ -14,12 +14,24 @@ class userProfileSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class imageSerializer(serializers.HyperlinkedModelSerializer):
-    user_id = serializers.PrimaryKeyRelatedField(queryset=models.User.objects.all(), source='User.id')
+class prsonalImageSerializer(serializers.ModelSerializer):
+    user = userProfileSerializer
 
     class Meta:
         model = models.PersonallyImage
-        fields = ("model_pic")
+        fields = ("model_pic", "user",)
+
+
+class nationalCarImageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.NationalCardImage
+        fields = ("model_pic", "user")
+
+
+class shenasnameCardImageSrializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.ShenasnameImage
+        fields = ("model_pic", "user")
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -29,4 +41,4 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
     def get_tracks(self, user):
         qs = user.personallyimage_set.all()[-1:]
-        return imageSerializer(qs, many=True, read_only=True).data
+        return prsonalImageSerializer(qs, many=True, read_only=True).data

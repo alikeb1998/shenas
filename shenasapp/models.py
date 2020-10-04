@@ -1,4 +1,3 @@
-
 from django.db import models
 from django.contrib import admin
 
@@ -19,7 +18,6 @@ class userProfile(models.Model):
         return self.user.username
 
 
-# Create your models here.
 class User(models.Model):
     name = models.CharField(max_length=255, null=False)
     lastName = models.CharField(max_length=255, null=False)
@@ -54,6 +52,11 @@ class ShenasnameImage(models.Model):
 
     def __str__(self):
         return self.user.name
+
+
+
+
+
 
 
 class PersonallyImage_inline(admin.TabularInline):

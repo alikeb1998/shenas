@@ -23,19 +23,22 @@ from django.conf import settings
 
 router = routers.DefaultRouter()
 
-# router.register(r'api/users', views.UserViewSet)
-router.register(r'api/upload', views.ImageCreateAPIView)
+
+router.register(r'api/uploadPersonalImage', views.personalImageView)
+router.register(r'api/uploadNationalCardImage', views.nationalCardImageView)
+router.register(r'api/uploadShenasnameImage', views.shenasnameImageView)
+
 admin.autodiscover()
 
 urlpatterns = [
                   path('admin/', admin.site.urls),
                   url(r'^', include(router.urls)),
 
-                  # path to djoser end points
+
                   path('auth/', include('djoser.urls')),
                   path('auth/', include('djoser.urls.jwt')),
 
-                  # path to our account's app endpoints
+
                   path("api/accounts/", include("shenasapp.urls"))
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
