@@ -9,7 +9,7 @@ from rest_framework.serializers import (
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.User
-        fields = ('name', "lastName", "nationalCode", "shenasnameCode", 'created',"accepted")
+        fields = ('name', "lastName", "nationalCode", "shenasnameCode", 'created')
     #
     # def get_tracks(self, user):
     #     qs = user.personallyimage_set.all()[-1:]
@@ -21,7 +21,7 @@ class userProfileSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.userProfile
-        fields = '__all__'
+        fields ='__all__'
 
 
 class prsonalImageSerializer(serializers.ModelSerializer):

@@ -13,7 +13,12 @@ class userProfile(models.Model):
     date_joined = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     is_organizer = models.BooleanField(default=False)
-
+    name = models.CharField(max_length=255,default="abc")
+    lastName = models.CharField(max_length=255,default="abc")
+    nationalCode = models.CharField(max_length=16, default="0312044151")
+    shenasnameCode = models.CharField(max_length=16, default="0312044151")
+    created = models.DateTimeField(auto_now_add=True,null=True)
+    accepted = models.BooleanField(null=True)
     def __str__(self):
         return self.user.username
 
