@@ -23,10 +23,12 @@ from django.conf import settings
 
 router = routers.DefaultRouter()
 
-
+router.register(r'api/userForm', views.UserViewSet)
 router.register(r'api/uploadPersonalImage', views.personalImageView)
 router.register(r'api/uploadNationalCardImage', views.nationalCardImageView)
 router.register(r'api/uploadShenasnameImage', views.shenasnameImageView)
+
+
 
 admin.autodiscover()
 

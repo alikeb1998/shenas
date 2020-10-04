@@ -54,11 +54,6 @@ class ShenasnameImage(models.Model):
         return self.user.name
 
 
-
-
-
-
-
 class PersonallyImage_inline(admin.TabularInline):
     model = PersonallyImage
     extra = 1

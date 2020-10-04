@@ -1,3 +1,5 @@
+from pyexpat.errors import messages
+
 from django.shortcuts import render
 from rest_framework import viewsets
 from . import models
@@ -41,6 +43,8 @@ class shenasnameImageView(viewsets.ModelViewSet):
 
 
 class UserViewSet(viewsets.ModelViewSet):
-    # this fetches all the rows of data in the Fish table
-    queryset = models.User.objects.all()
     serializer_class = serializers.UserSerializer
+    queryset = models.User.objects.all()
+
+
+
